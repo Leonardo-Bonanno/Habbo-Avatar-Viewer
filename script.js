@@ -184,7 +184,8 @@ function loadAllBadges(badges = [], newBadges = []) {
       `
       <strong>${badge.name}</strong><br>
       Código: ${badge.code}<br>
-      ${badge.description}
+      ${badge.description}<br>
+      ${new Date(badge.detectedAt).toLocaleDateString("pt-BR")}
       `
     );
 

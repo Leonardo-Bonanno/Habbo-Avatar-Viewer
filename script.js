@@ -447,7 +447,7 @@ toggleFriendsBtn.addEventListener("click", () => {
 // FETCH
 ////////////////////////////////
 async function fetchFullProfile(username) {
-  const res = await fetch(`https://habbo-avatar-viewer-api.onrender.com/profile/${username}`);
+  const res = await fetch(`https://habbo-avatar-viewer-api-vtpc.onrender.com/profile/${username}`);
 
   if (!res.ok) {
     const msg = await res.text();

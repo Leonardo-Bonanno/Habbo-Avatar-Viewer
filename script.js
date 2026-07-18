@@ -423,6 +423,11 @@ function loadLevelInfo({
 
   bar.style.width = `${currentLevelCompletePercent}%`;
   bar.textContent = `${currentLevelCompletePercent}%`;
+
+  if (totalExperience > 4000) {
+    bar.style.width = `100%`;
+    bar.textContent = `100%`;
+  }
 }
 
 // BOTÕES FILTRO

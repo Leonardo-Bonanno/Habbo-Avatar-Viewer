@@ -184,7 +184,8 @@ function loadAllBadges(badges = [], newBadges = []) {
       `
       <strong>${badge.name}</strong><br>
       Código: ${badge.code}<br>
-      ${badge.description}
+      ${badge.description}<br>
+      ${new Date(badge.detectedAt).toLocaleDateString("pt-BR")}
       `
     );
 
@@ -422,6 +423,11 @@ function loadLevelInfo({
 
   bar.style.width = `${currentLevelCompletePercent}%`;
   bar.textContent = `${currentLevelCompletePercent}%`;
+
+  if (totalExperience > 4000) {
+    bar.style.width = `100%`;
+    bar.textContent = `100%`;
+  }
 }
 
 // BOTÕES FILTRO
@@ -446,7 +452,7 @@ toggleFriendsBtn.addEventListener("click", () => {
 // FETCH
 ////////////////////////////////
 async function fetchFullProfile(username) {
-  const res = await fetch(`https://habbo-avatar-viewer-api.onrender.com/profile/${username}`);
+  const res = await fetch(`https://habbo-avatar-viewer-api-vtpc.onrender.com/profile/${username}`);
 
   if (!res.ok) {
     const msg = await res.text();

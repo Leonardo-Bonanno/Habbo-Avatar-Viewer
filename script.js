@@ -78,7 +78,7 @@ function renderProfile(data) {
   motto.textContent = data.motto;
 
   lastSeen.innerHTML = data.lastAccessTime
-    ? `🕒 <strong>Último login:</strong> ${tempoDesde(data.lastAccessTime)}`
+    ? `🕒 <strong>Último login:</strong> ${timeSince(data.lastAccessTime)}`
     : `🕒 <strong>Último login:</strong> Status desativado`;
   if (data.profileVisible) {
     createData.innerHTML = `📅 <strong>Criação:</strong> ${new Date(data.memberSince).toLocaleDateString("pt-BR")}`;

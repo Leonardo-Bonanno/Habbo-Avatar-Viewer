@@ -393,7 +393,7 @@ function renderLevelInfo(
   let remaining = totalExperience - (achievementsPoints + badgesCount);
   if (remaining < 0) remaining = 0;
 
-  const roomsPoints = Math.floor(remaining / 2);
+  const roomsPoints = Math.floor(remaining / 10);
   const mobiPoints = remaining - roomsPoints;
 
   loadLevelInfo({

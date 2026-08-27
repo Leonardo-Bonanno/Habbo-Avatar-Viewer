@@ -78,7 +78,7 @@ function renderProfile(data) {
   motto.textContent = data.motto;
 
   lastSeen.innerHTML = data.lastAccessTime
-    ? `🕒 <strong>Último login:</strong> ${new Date(data.lastAccessTime).toLocaleDateString("pt-BR")}`
+    ? `🕒 <strong>Último login:</strong> ${tempoDesde(data.lastAccessTime)}`
     : `🕒 <strong>Último login:</strong> Status desativado`;
   if (data.profileVisible) {
     createData.innerHTML = `📅 <strong>Criação:</strong> ${new Date(data.memberSince).toLocaleDateString("pt-BR")}`;
@@ -87,6 +87,24 @@ function renderProfile(data) {
 
     loadSelectedBadges(data.selectedBadges);
   }
+}
+
+function timeSince(data) {
+    const diference = Date.now() - new Date(data).getTime();
+
+    const hours = Math.floor(diference / (1000 * 60 * 60));
+
+    if (hours < 1) {
+        return "menos de 1 hora atrás";
+    }
+
+    if (hours < 24) {
+        return `${hours} hora${hours !== 1 ? "s" : ""} atrás`;
+    }
+
+    const dias = Math.floor(hours / 24);
+
+    return `${dias} dia${dias !== 1 ? "s" : ""} atrás`;
 }
 
 // Emblemas

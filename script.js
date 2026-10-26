@@ -122,7 +122,7 @@ function loadSelectedBadges(badges = []) {
       const badge = badges[i];
 
       const img = document.createElement("img");
-      img.src = `https://images.habbo.com/c_images/album1584/${badge.code}.gif`;
+      img.src = `https://images.habbo.com/c_images/album1584/${badge.code}.png`;
 
       slot.appendChild(img);
 
@@ -185,7 +185,7 @@ function loadAllBadges(badges = [], newBadges = []) {
     slot.classList.add("badge-slot", "position-relative");
 
     const img = document.createElement("img");
-    img.src = `https://images.habbo.com/c_images/album1584/${badge.code}.gif`;
+    img.src = `https://images.habbo.com/c_images/album1584/${badge.code}.png`;
 
     slot.appendChild(img);
 
@@ -411,7 +411,7 @@ function renderLevelInfo(
   let remaining = totalExperience - (achievementsPoints + badgesCount);
   if (remaining < 0) remaining = 0;
 
-  const roomsPoints = Math.floor(remaining / 10);
+  const roomsPoints = Math.floor(remaining / 20);
   const mobiPoints = remaining - roomsPoints;
 
   loadLevelInfo({
